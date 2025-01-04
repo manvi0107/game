@@ -12,6 +12,21 @@ const goBackButton = document.getElementById("goBackButton");
 const startOverButton = document.getElementById("startOverButton");
 const backgroundMusic = document.getElementById("backgroundMusic");
 
+
+
+startButton.addEventListener("click", function() {
+    // Play the audio when the game starts
+    audio.play();
+    startGame();
+});
+
+function startGame() {
+    startButton.classList.add("hidden");
+    gameArea.classList.remove("hidden");
+    startTimer();
+    generateSchulteTable();
+}
+
 startButton.addEventListener("click", startGame);
 playAgainButton.addEventListener("click", resetGame);
 goBackButton.addEventListener("click", goBackHome);
