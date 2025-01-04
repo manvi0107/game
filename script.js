@@ -10,7 +10,7 @@ const playAgainButton = document.getElementById("playAgainButton");
 const bestScoreDiv = document.getElementById("bestScore");
 const goBackButton = document.getElementById("goBackButton");
 const startOverButton = document.getElementById("startOverButton");
-const backgroundMusic = document.getElementById("bgmusic");
+const backgroundMusic = document.getElementById("backgroundMusic");
 
 startButton.addEventListener("click", startGame);
 playAgainButton.addEventListener("click", resetGame);
