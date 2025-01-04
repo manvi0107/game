@@ -10,12 +10,21 @@ const playAgainButton = document.getElementById("playAgainButton");
 const bestScoreDiv = document.getElementById("bestScore");
 const goBackButton = document.getElementById("goBackButton");
 const startOverButton = document.getElementById("startOverButton");
+const backgroundMusic = document.getElementById("bgmusic");
 
 startButton.addEventListener("click", startGame);
 playAgainButton.addEventListener("click", resetGame);
 goBackButton.addEventListener("click", goBackHome);
 startOverButton.addEventListener("click", startOver);
 
+
+function startGame() {
+    startButton.classList.add("hidden");
+    gameArea.classList.remove("hidden");
+    startTimer();
+    generateSchulteTable();
+    backgroundMusic.play();  // Starts playing the background music
+}
 function startGame() {
     startButton.classList.add("hidden");
     gameArea.classList.remove("hidden");
