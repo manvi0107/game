@@ -7,24 +7,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <audio autoloop loop id="backgroundMusic">
-    <source src="Pirates-Of-The-Caribbean-Theme.mp3" type="audio/mpeg">
-    your browser does not support the audio tag.
+    <audio id="backgroundMusic" loop>
+        <source src="Pirates-Of-The-Caribbean-Theme.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
     </audio>
+
     <div class="container">
         <h1>Schulte Table</h1>
         <p>Click numbers from 1 to 25 in ascending order</p>
         <button id="startButton">Start Game</button>
+
         <div id="gameArea" class="hidden">
             <div id="timer">Time: 0s</div>
             <div id="schulteTable"></div>
         </div>
-        <p>THE BEAUTY OF THIS GAME IS THAT IT MAKES YOU WANNA KILL YOURSELF ~ Mrs Chanendler Bong</p>
+
+        <p>THE BEAUTY OF THIS GAME IS THAT IT MAKES YOU WANNA KILL YOURSELF ~ Mrs. Chanendler Bong</p>
         <button id="playAgainButton" class="hidden">Play Again</button>
         <button id="goBackButton" class="hidden">Go Back Home</button>
-         <button id="startOverButton" class="hidden">Start Over</button>
+        <button id="startOverButton" class="hidden">Start Over</button>
+
         <div id="bestScore">Best Time: --</div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
