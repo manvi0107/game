@@ -12,34 +12,19 @@ const goBackButton = document.getElementById("goBackButton");
 const startOverButton = document.getElementById("startOverButton");
 const backgroundMusic = document.getElementById("backgroundMusic");
 
-
-
-startButton.addEventListener("click", function() {
-    // Play the audio when the game starts
-    audio.play();
+// Start background music on user interaction
+startButton.addEventListener("click", () => {
+    if (backgroundMusic.paused) {
+        backgroundMusic.play().catch(error => console.error("Music playback error:", error));
+    }
     startGame();
 });
 
-function startGame() {
-    startButton.classList.add("hidden");
-    gameArea.classList.remove("hidden");
-    startTimer();
-    generateSchulteTable();
-}
-
-startButton.addEventListener("click", startGame);
+// Event Listeners
 playAgainButton.addEventListener("click", resetGame);
 goBackButton.addEventListener("click", goBackHome);
 startOverButton.addEventListener("click", startOver);
 
-
-function startGame() {
-    startButton.classList.add("hidden");
-    gameArea.classList.remove("hidden");
-    startTimer();
-    generateSchulteTable();
-    backgroundMusic.play();  // Starts playing the background music
-}
 function startGame() {
     startButton.classList.add("hidden");
     gameArea.classList.remove("hidden");
@@ -81,7 +66,7 @@ function handleCellClick(cell, num) {
             }
         }
     } else {
-        navigator.vibrate(500); // Vibrate for 500ms on wrong number click
+        navigator.vibrate(500); // Vibrate on wrong number click
         cell.classList.add("wrong");
     }
 }
@@ -89,11 +74,9 @@ function handleCellClick(cell, num) {
 function resetGame() {
     currentNumber = 1;
     startGame();
-    // Re-enable all cells for the new game
-    const cells = document.querySelectorAll("#schulteTable div");
-    cells.forEach(cell => {
+    document.querySelectorAll("#schulteTable div").forEach(cell => {
         cell.classList.remove("correct", "wrong");
-        cell.style.pointerEvents = 'auto';
+        cell.style.pointerEvents = "auto";
     });
     playAgainButton.classList.add("hidden");
     goBackButton.classList.add("hidden");
@@ -108,9 +91,9 @@ function shuffleArray(array) {
 }
 
 function goBackHome() {
-    window.location.href = "index.html"; // Adjust with your homepage URL
+    window.location.href = "index.html";
 }
 
 function startOver() {
-    location.reload(); // Reloads the page to start the game over
+    location.reload();
 }
